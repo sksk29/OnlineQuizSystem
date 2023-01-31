@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE01C13F-EEAA-45EE-81F6-7248DC6635F7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnlineQuizSystem</RootNamespace>
+    <AssemblyName>OnlineQuizSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminAccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminBasicDataController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DocumentationController.cs" />
+    <Compile Include="Areas\Teachers\Controllers\TeacherHomeController.cs" />
+    <Compile Include="Areas\Teachers\TeachersAreaRegistration.cs" />
+    <Compile Include="Areas\Users\Controllers\UserHomeController.cs" />
+    <Compile Include="Areas\Users\UsersAreaRegistration.cs" />
+    <Compile Include="CommonCode\CommonHelper.cs" />
+    <Compile Include="CommonCode\Constants.cs" />
+    <Compile Include="CommonCode\ExtensionMethods.cs" />
+    <Compile Include="CommonCode\PagerHelper.cs" />
+    <Compile Include="CommonCode\SessionManager.cs" />
+    <Compile Include="CommonCode\StudentAuthorization.cs" />
+    <Compile Include="CommonCode\TeacherAuthorization.cs" />
+    <Compile Include="CommonCode\URL_Helper.cs" />
+    <Compile Include="CommonCode\AdminAuthorization.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\AdminHome\Courses.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\StudentsList.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\_CoursesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\_StudentsListPartial.cshtml" />
+    <Content Include="Areas\Teachers\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\AddQuiz.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\Index.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\QuizDetail.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\QuizList.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\StudentResultDetail.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\StudentResultList.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\_QuizListPartial.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\CoursesList.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\Index.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\StartQuiz.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\StudentQuizList.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\_CoursesListPartial.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\_QuizQuestions.cshtml" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ThemeContent\css\animate.css" />
+    <Content Include="Content\ThemeContent\css\bootstrap-rtl.css" />
+    <Content Include="Content\ThemeContent\css\bootstrap.css" />
+    <Content Include="Content\ThemeContent\css\calendar.css" />
+    <Content Include="Content\ThemeContent\css\colors.css" />
+    <Content Include="Content\ThemeContent\css\colors.php" />
+    <Content Include="Content\ThemeContent\css\components\bs-datatable.css" />
+    <Content Include="Content\ThemeContent\css\components\bs-filestyle.css" />
+    <Content Include="Content\ThemeContent\css\components\bs-rating.css" />
+    <Content Include="Content\ThemeContent\css\components\bs-select.css" />
+    <Content Include="Content\ThemeContent\css\components\bs-switches-vars.css" />
+    <Content Include="Content\ThemeContent\css\components\bs-switches.css" />
+    <Content Include="Content\ThemeContent\css\components\dark-components.css" />
+    <Content Include="Content\ThemeContent\css\components\datepicker.css" />
+    <Content Include="Content\ThemeContent\css\components\daterangepicker.css" />
+    <Content Include="Content\ThemeContent\css\components\ion.rangeslider-vars.css" />
+    <Content Include="Content\ThemeContent\css\components\ion.rangeslider.css" />
+    <Content Include="Content\ThemeContent\css\components\pricing-table.css" />
+    <Content Include="Content\ThemeContent\css\components\radio-checkbox-vars.css" />
+    <Content Include="Content\ThemeContent\css\components\radio-checkbox.css" />
+    <Content Include="Content\ThemeContent\css\components\rangeslider\sprite-skin-nice.png" />
+    <Content Include="Content\ThemeContent\css\components\select-boxes.css" />
+    <Content Include="Content\ThemeContent\css\components\timepicker.css" />
+    <Content Include="Content\ThemeContent\css\custom.css" />
+    <Content Include="Content\ThemeContent\css\dark.css" />
+    <Content Include="Content\ThemeContent\css\font-icons.css" />
+    <Content Include="Content\ThemeContent\css\fonts.css" />
+    <Content Include="Content\ThemeContent\css\fonts\font-icons.svg" />
+    <Content Include="Content\ThemeContent\css\fonts\lined-icons.svg" />
+    <Content Include="Content\ThemeContent\css\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Content\ThemeContent\css\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\ThemeContent\css\imports\blog.css" />
+    <Content Include="Content\ThemeContent\css\imports\bootstrap.css" />
+    <Content Include="Content\ThemeContent\css\imports\content.css" />
+    <Content Include="Content\ThemeContent\css\imports\events.css" />
+    <Content Include="Content\ThemeContent\css\imports\extras.css" />
+    <Content Include="Content\ThemeContent\css\imports\footer.css" />
+    <Content Include="Content\ThemeContent\css\imports\forms.css" />
+    <Content Include="Content\ThemeContent\css\imports\header.css" />
+    <Content Include="Content\ThemeContent\css\imports\layouts.css" />
+    <Content Include="Content\ThemeContent\css\imports\page-loaders.css" />
+    <Content Include="Content\ThemeContent\css\imports\pagetitle.css" />
+    <Content Include="Content\ThemeContent\css\imports\paginations.css" />
+    <Content Include="Content\ThemeContent\css\imports\portfolio.css" />
+    <Content Include="Content\ThemeContent\css\imports\shop.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\alerts.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\buttons.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\carousel.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\clients.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\countdown.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\counter-skills.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\dividers.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\faqs.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\feature-box.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\flipcard.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\headings.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\misc.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\pricing.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\process-steps.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\promo.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\social-icons.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\styled-icons.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\tabs.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\team.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\testimonials.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\toast.css" />
+    <Content Include="Content\ThemeContent\css\imports\shortcodes\toggles-accordions.css" />
+    <Content Include="Content\ThemeContent\css\imports\sliders.css" />
+    <Content Include="Content\ThemeContent\css\imports\topbar.css" />
+    <Content Include="Content\ThemeContent\css\imports\typography.css" />
+    <Content Include="Content\ThemeContent\css\imports\utilities.css" />
+    <Content Include="Content\ThemeContent\css\imports\widgets.css" />
+    <Content Include="Content\ThemeContent\css\intro-fonts.css" />
+    <Content Include="Content\ThemeContent\css\magnific-popup.css" />
+    <Content Include="Content\ThemeContent\css\swiper.css" />
+    <Content Include="Content\ThemeContent\demos\covid_care\covid-care.css" />
+    <Content Include="Content\ThemeContent\demos\seo\css\fonts.css" />
+    <Content Include="Content\ThemeContent\demos\seo\images\about-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\blog\1.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\blog\2.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\blog\3.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\faqs-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\flags\ara.png" />
+    <Content Include="Content\ThemeContent\demos\seo\images\flags\eng.png" />
+    <Content Include="Content\ThemeContent\demos\seo\images\flags\fre.png" />
+    <Content Include="Content\ThemeContent\demos\seo\images\flags\tha.png" />
+    <Content Include="Content\ThemeContent\demos\seo\images\hero\footer.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\hero\hero-1.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\hero\hero-3.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\adword.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\analysis.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\content_marketing.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\discount.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\experience.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\features-middot.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\gambling.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\globe.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\group.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\growth.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\man.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\optimizing.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\research.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\result.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\seo.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\social.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\icons\team.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\sections\1.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\sections\2.png" />
+    <Content Include="Content\ThemeContent\demos\seo\images\sections\3.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\sections\4.png" />
+    <Content Include="Content\ThemeContent\demos\seo\images\sections\5.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\adwords-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\adwords.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\analysis-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\analysis.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\content_marketing-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\content_marketing.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\experience-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\experience.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\seo-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\seo.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\social-title.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\services\social.svg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\works\1.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\works\2.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\works\3.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\works\4.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\works\5.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\images\works\6.jpg" />
+    <Content Include="Content\ThemeContent\demos\seo\seo.css" />
+    <Content Include="Content\ThemeContent\images\admin_loginpage.jpg" />
+    <Content Include="Content\ThemeContent\images\examSys.png" />
+    <Content Include="Content\ThemeContent\images\footer-widget-logo.png" />
+    <Content Include="Content\ThemeContent\images\icon-pattern.jpg" />
+    <Content Include="Content\ThemeContent\images\logo%402x.png" />
+    <Content Include="Content\ThemeContent\images\logo-dark%402x.png" />
+    <Content Include="Content\ThemeContent\images\logo.png" />
+    <Content Include="Content\ThemeContent\images\student_noor.png" />
+    <Content Include="Content\ThemeContent\images\Teacher_Noor.png" />
+    <Content Include="Content\ThemeContent\images\wave-3.svg" />
+    <Content Include="Content\ThemeContent\js\chart-utils.js" />
+    <Content Include="Content\ThemeContent\js\chart.js" />
+    <Content Include="Content\ThemeContent\js\components\bs-datatable.js" />
+    <Content Include="Content\ThemeContent\js\components\bs-filestyle.js" />
+    <Content Include="Content\ThemeContent\js\components\bs-select.js" />
+    <Content Include="Content\ThemeContent\js\components\bs-switches.js" />
+    <Content Include="Content\ThemeContent\js\components\datepicker.js" />
+    <Content Include="Content\ThemeContent\js\components\daterangepicker.js" />
+    <Content Include="Content\ThemeContent\js\components\event.move.js" />
+    <Content Include="Content\ThemeContent\js\components\image-changer.js" />
+    <Content Include="Content\ThemeContent\js\components\moment.js" />
+    <Content Include="Content\ThemeContent\js\components\rangeslider.min.js" />
+    <Content Include="Content\ThemeContent\js\components\select-boxes.js" />
+    <Content Include="Content\ThemeContent\js\components\selectsplitter.js" />
+    <Content Include="Content\ThemeContent\js\components\star-rating.js" />
+    <Content Include="Content\ThemeContent\js\components\timepicker.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\icons\default\icons.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\license.txt" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\content\default\content.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\content\document\content.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide-dark\content.mobile.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide-dark\skin.mobile.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide\content.mobile.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide\skin.mobile.min.css" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\themes\mobile\theme.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\themes\silver\theme.min.js" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\tinymce.min.js" />
+    <Content Include="Content\ThemeContent\js\components\typehead.js" />
+    <Content Include="Content\ThemeContent\js\events-data.js" />
+    <Content Include="Content\ThemeContent\js\functions.js" />
+    <Content Include="Content\ThemeContent\js\holder.js" />
+    <Content Include="Content\ThemeContent\js\intersection-observer.js" />
+    <Content Include="Content\ThemeContent\js\jquery.calendario.js" />
+    <Content Include="Content\ThemeContent\js\jquery.hotspot.js" />
+    <Content Include="Content\ThemeContent\js\jquery.js" />
+    <Content Include="Content\ThemeContent\js\jquery.mousewheel.min.js" />
+    <Content Include="Content\ThemeContent\js\particles\particles-bubbles.js" />
+    <Content Include="Content\ThemeContent\js\particles\particles-line.js" />
+    <Content Include="Content\ThemeContent\js\particles\particles-nasa.js" />
+    <Content Include="Content\ThemeContent\js\particles\particles-poly.js" />
+    <Content Include="Content\ThemeContent\js\particles\particles-snow.js" />
+    <Content Include="Content\ThemeContent\js\particles\particles.min.js" />
+    <Content Include="Content\ThemeContent\js\plugins.accordions.js" />
+    <Content Include="Content\ThemeContent\js\plugins.ajaxform.js" />
+    <Content Include="Content\ThemeContent\js\plugins.ajaxportfolio.js" />
+    <Content Include="Content\ThemeContent\js\plugins.animations.js" />
+    <Content Include="Content\ThemeContent\js\plugins.bootstrap.js" />
+    <Content Include="Content\ThemeContent\js\plugins.carousel.js" />
+    <Content Include="Content\ThemeContent\js\plugins.cookie.js" />
+    <Content Include="Content\ThemeContent\js\plugins.countdown.js" />
+    <Content Include="Content\ThemeContent\js\plugins.counter.js" />
+    <Content Include="Content\ThemeContent\js\plugins.dataclasses.js" />
+    <Content Include="Content\ThemeContent\js\plugins.dataheights.js" />
+    <Content Include="Content\ThemeContent\js\plugins.dribbble.js" />
+    <Content Include="Content\ThemeContent\js\plugins.easing.js" />
+    <Content Include="Content\ThemeContent\js\plugins.fitvids.js" />
+    <Content Include="Content\ThemeContent\js\plugins.flexslider.js" />
+    <Content Include="Content\ThemeContent\js\plugins.flickrfeed.js" />
+    <Content Include="Content\ThemeContent\js\plugins.form.js" />
+    <Content Include="Content\ThemeContent\js\plugins.gmap.js" />
+    <Content Include="Content\ThemeContent\js\plugins.gridfilter.js" />
+    <Content Include="Content\ThemeContent\js\plugins.hashchange.js" />
+    <Content Include="Content\ThemeContent\js\plugins.hoveranimation.js" />
+    <Content Include="Content\ThemeContent\js\plugins.html5video.js" />
+    <Content Include="Content\ThemeContent\js\plugins.imagesloaded.js" />
+    <Content Include="Content\ThemeContent\js\plugins.infinitescroll.js" />
+    <Content Include="Content\ThemeContent\js\plugins.instagram.js" />
+    <Content Include="Content\ThemeContent\js\plugins.isotope.js" />
+    <Content Include="Content\ThemeContent\js\plugins.jpaginate.js" />
+    <Content Include="Content\ThemeContent\js\plugins.js" />
+    <Content Include="Content\ThemeContent\js\plugins.lazyload.js" />
+    <Content Include="Content\ThemeContent\js\plugins.lightbox.js" />
+    <Content Include="Content\ThemeContent\js\plugins.linkscroll.js" />
+    <Content Include="Content\ThemeContent\js\plugins.masonrythumbs.js" />
+    <Content Include="Content\ThemeContent\js\plugins.min.js" />
+    <Content Include="Content\ThemeContent\js\plugins.navtree.js" />
+    <Content Include="Content\ThemeContent\js\plugins.notify.js" />
+    <Content Include="Content\ThemeContent\js\plugins.onepage.js" />
+    <Content Include="Content\ThemeContent\js\plugins.pagetransition.js" />
+    <Content Include="Content\ThemeContent\js\plugins.parallax.js" />
+    <Content Include="Content\ThemeContent\js\plugins.piechart.js" />
+    <Content Include="Content\ThemeContent\js\plugins.pricingswitcher.js" />
+    <Content Include="Content\ThemeContent\js\plugins.progress.js" />
+    <Content Include="Content\ThemeContent\js\plugins.quantity.js" />
+    <Content Include="Content\ThemeContent\js\plugins.readmore.js" />
+    <Content Include="Content\ThemeContent\js\plugins.respond.js" />
+    <Content Include="Content\ThemeContent\js\plugins.shapedivider.js" />
+    <Content Include="Content\ThemeContent\js\plugins.stickysidebar.js" />
+    <Content Include="Content\ThemeContent\js\plugins.subscribe.js" />
+    <Content Include="Content\ThemeContent\js\plugins.superfish.js" />
+    <Content Include="Content\ThemeContent\js\plugins.swiper.js" />
+    <Content Include="Content\ThemeContent\js\plugins.tabs.js" />
+    <Content Include="Content\ThemeContent\js\plugins.textrotator.js" />
+    <Content Include="Content\ThemeContent\js\plugins.toggles.js" />
+    <Content Include="Content\ThemeContent\js\plugins.twitter.js" />
+    <Content Include="Content\ThemeContent\js\plugins.youtube.js" />
+    <Content Include="Content\ThemeContent\Style\style-import.css" />
+    <Content Include="Content\ThemeContent\Style\style-rtl.css" />
+    <Content Include="Content\ThemeContent\Style\style.css" />
+    <Content Include="Content\ThemeContent\Style\styled-icons.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Users\Views\web.config" />
+    <Content Include="Content\ThemeContent\css\fonts\font-icons.eot" />
+    <Content Include="Content\ThemeContent\css\fonts\font-icons.ttf" />
+    <Content Include="Content\ThemeContent\css\fonts\font-icons.woff" />
+    <Content Include="Content\ThemeContent\css\fonts\lined-icons.eot" />
+    <Content Include="Content\ThemeContent\css\fonts\lined-icons.ttf" />
+    <Content Include="Content\ThemeContent\css\fonts\lined-icons.woff" />
+    <Content Include="Content\ThemeContent\css\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Content\ThemeContent\css\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\ThemeContent\css\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\ThemeContent\demos\seo\images\hero.ai" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\langs\readme.md" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide-dark\fonts\tinymce-mobile.woff" />
+    <Content Include="Content\ThemeContent\js\components\tinymce\skins\ui\oxide\fonts\tinymce-mobile.woff" />
+    <Content Include="Content\ThemeContent\js\particles\particlesjs-config.json" />
+    <Content Include="Areas\Admin\Views\AdminAccount\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Users\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminBasicData\QuizCategories.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminBasicData\_QuizCategoriesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminHeader.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminFooter.cshtml" />
+    <Content Include="Areas\Users\Views\Shared\_UserFooter.cshtml" />
+    <Content Include="Areas\Users\Views\Shared\_UserHeader.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminBasicData\_CourseCategoriesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminBasicData\CourseCategories.cshtml" />
+    <Content Include="Areas\Teachers\Views\web.config" />
+    <Content Include="Areas\Teachers\Views\Shared\_TeacherFooter.cshtml" />
+    <Content Include="Areas\Teachers\Views\Shared\_TeacherHeader.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\Courses.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\_CoursesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\_StudentRegisteredCoursesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\StudentRegisteredCourses.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\_TeachersListPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\TeachersList.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\_TeacherAssignCoursesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\TeacherAssignCourses.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\_StudentQuizListPartial.cshtml" />
+    <Content Include="Areas\Users\Views\Shared\_PageSlider.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PageSlider.cshtml" />
+    <Content Include="Areas\Teachers\Views\Shared\_PageSlider.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\AssignmentList.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\_AssignmentListPartial.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\AddAssignment.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\AssignmentDetail.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\StudentAssignmentResultList.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\StudentAssignmentList.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\_StudentAssignmentListPartial.cshtml" />
+    <Content Include="Areas\Users\Views\UserHome\StartAssignment.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\StudentAssignmentResultDetail.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\StudentListInCourses.cshtml" />
+    <Content Include="Areas\Teachers\Views\TeacherHome\_StudentListInCoursesPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Documentation\Index.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Pager.cshtml" />
+    <Content Include="Views\Shared\_Loader.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\AdminBase\" />
+    <Folder Include="Areas\Admin\Views\Courses\" />
+    <Folder Include="Areas\Teachers\Data\" />
+    <Folder Include="Areas\Users\Data\" />
+    <Folder Include="Areas\Users\Views\UserBase\" />
+    <Folder Include="CommonImages\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{80c628a8-e9e2-45d0-a68f-cf6add352cbb}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62383</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62383/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

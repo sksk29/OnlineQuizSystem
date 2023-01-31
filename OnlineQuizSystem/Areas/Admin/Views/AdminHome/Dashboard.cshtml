@@ -1,0 +1,344 @@
+﻿
+@using DAL
+@using DAL.Entities
+@using DAL.Services
+@using OnlineQuizSystem.CommonCode
+@model BasicDataModels
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<!-- Page Title
+============================================= -->
+
+@Html.Partial("~/Areas/Admin/Views/Shared/_PageSlider.cshtml", new DAL.Entities.GeneralData { PageTitle = "" })
+
+<!-- #page-title end -->
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap py-0 overflow-visible">
+
+        <div class="card mx-auto mw-md border-0 shadow rounded-xl card-seo-about mb-5 mb-lg-0 mt-2">
+            <div class="card-body p-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="heading-block border-bottom-0 mb-0">
+                            <div class="badge badge-pill badge-default">Last 6 Years Traffic</div>
+                            <h3 class="nott ls0 mb-3">See how many students registered Year by Year</h3>
+                            <p>In the chart you can easily depict the rate of students registeration in the last few years.</p>
+                            <a href="@Url.Action("StudentsList", "AdminHome", new { area = "Admin" , pageId=1 })" class="button button-rounded text-capitalize m-0 ls0">Go To List</a>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-right text-muted text-smaller">Overall Progress: <span class="text-success font-weight-bold text-larger">+75%</span></p>
+                        <canvas id="chart-0"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Features
+            ============================================= -->
+        <div class="section bg-transparent" style="margin-top: 1px !important; padding-top: 3px !important;">
+            <div class="container">
+
+                <div class="heading-block border-bottom-0 center mx-auto" style="max-width: 550px">
+
+                    <h3 class="nott ls0 mb-3">Guidelines For Different Processes</h3>
+
+                </div>
+
+                <div class="row col-mb-30 align-content-stretch">
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a href="#!" class="card h-shadow h-translate-y-sm all-ts">
+                            <div class="card-body p-5">
+                                <div class="feature-box flex-column">
+                                    <div class="fbox-image mb-5 text-center">
+                                        <img height="150" src="/Content/ThemeContent/demos/seo/images/services/seo.svg" alt="Feature Icon">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3 class="nott ls0 text-larger">Course Creation</h3>
+                                        <p class="text-smaller">The course creation module contains processes like</p>
+                                    </div>
+                                    <ul class="iconlist ml-3 mt-4 mb-0">
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Creating New Course</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Searching Course</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Updating Course</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Deleting Course</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a href="#!" class="card h-shadow h-translate-y-sm all-ts">
+                            <div class="card-body p-5">
+                                <div class="feature-box flex-column">
+                                    <div class="fbox-image mb-5 text-center">
+                                        <img height="150" src="/Content/ThemeContent/demos/seo/images/services/social.svg" alt="Feature Icon">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3 class="nott ls0 text-larger">Student Registeration</h3>
+                                        <p class="text-smaller">The student registeration module contains.</p>
+                                    </div>
+                                    <ul class="iconlist ml-3 mt-4 mb-0">
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> New Student Registeration</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Modifiying Student Data</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Deleting Student Record</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Searching a Student</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a href="#!" class="card h-shadow h-translate-y-sm all-ts">
+                            <div class="card-body p-5">
+                                <div class="feature-box flex-column">
+                                    <div class="fbox-image mb-5 text-center">
+                                        <img height="150" src="/Content/ThemeContent/demos/seo/images/services/adwords.svg" alt="Feature Icon">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3 class="nott ls0 text-larger">Teacher Registeration</h3>
+                                        <p class="text-smaller">The teacher registeration module contains.</p>
+                                    </div>
+                                    <ul class="iconlist ml-3 mt-4 mb-0">
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Teacher Registeration</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Modifying Teacher Data</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Deleting Teacher Record</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Searching a Teacher</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a href="#!" class="card h-shadow h-translate-y-sm all-ts">
+                            <div class="card-body p-5">
+                                <div class="feature-box flex-column">
+                                    <div class="fbox-image mb-5 text-center">
+                                        <img height="150" src="/Content/ThemeContent/demos/seo/images/services/analysis.svg" alt="Feature Icon">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3 class="nott ls0 text-larger">Assign Course To Teacher</h3>
+                                        <p class="text-smaller">There are different categories in this module like.</p>
+                                    </div>
+                                    <ul class="iconlist ml-3 mt-4 mb-0">
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Assing New Course</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Search Existing Course</li>
+                                        <li class="text-muted"><i class="icon-check text-smaller color"></i> Remove Student</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a href="#!" class="card h-shadow h-translate-y-sm all-ts">
+                            <div class="card-body p-5">
+                                <div class="feature-box flex-column">
+                                    <div class="fbox-image mb-5 text-center">
+                                        <img height="150" src="/Content/ThemeContent/demos/seo/images/services/experience.svg" alt="Feature Icon">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3 class="nott ls0 text-larger">Assign Course To Student</h3>
+                                        <p class="text-smaller">The objective of this module is to perform tasks like.</p>
+                                    </div>
+                                    <ul class="iconlist ml-3 mt-4 mb-0">
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Assing Course To Teahcer</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Search Teacher Courses</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Remove a Course</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <a href="#!" class="card h-shadow h-translate-y-sm all-ts">
+                            <div class="card-body p-5">
+                                <div class="feature-box flex-column">
+                                    <div class="fbox-image mb-5 text-center">
+                                        <img height="150" src="/Content/ThemeContent/demos/seo/images/services/content_marketing.svg" alt="Feature Icon">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3 class="nott ls0 text-larger">Basic Data</h3>
+                                        <p class="text-smaller">The Basic Data Module of Admin Area Contains.</p>
+                                    </div>
+                                    <ul class="iconlist ml-3 mt-4 mb-0">
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Addin Basic Data</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Updating Basic Data</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Deleting Basic Data</li>
+                                        <li class="mb-2 text-muted"><i class="icon-check text-smaller color"></i> Searching Basic Data</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section><!-- #content end -->
+
+@{
+    var emtpyChartList = new List<ChartData>();
+    Model.ChartDataList = Model.ChartDataList == null ? emtpyChartList : Model.ChartDataList;
+}
+
+
+@section scripts{
+
+
+
+
+    <script src="/Content/ThemeContent/js/chart.js"></script>
+    <script src="/Content/ThemeContent/js/chart-utils.js"></script>
+    <script src="/Content/ThemeContent/js/components/moment.js"></script>
+
+    <script>
+
+        // ============================================
+        // As of Chart.js v2.5.0
+        // http://www.chartjs.org/docs
+        // ============================================
+
+
+        $(document).ready(function () {
+
+
+            DashboardStudentEnrolledChartData();
+
+        });
+
+
+
+
+        function DashboardStudentEnrolledChartData() {
+
+
+
+            var chartLabel = [];
+            var chartData = [];
+
+
+            var modelList = '@Html.Raw(Json.Encode(Model.ChartDataList))';
+            var dataOf = JSON.parse(modelList);
+
+            for (i = 0; i < dataOf.length; i++) {
+                chartLabel.push(dataOf[i].Label);
+                chartData.push(dataOf[i].Data);
+            }
+
+            var chart = document.getElementById('chart-0').getContext('2d'),
+                gradient = chart.createLinearGradient(0, 0, 0, 300);
+
+            gradient.addColorStop(0, 'rgba(254,150,3, .5)');
+            gradient.addColorStop(0.5, 'rgba(254,150,3, 0)');
+            gradient.addColorStop(1, 'rgba(254,150,3, 0)');
+
+
+            var data = {
+                //  labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
+                labels: chartLabel,
+                datasets: [{
+                    label: 'Data',
+                    backgroundColor: gradient,
+                    pointBackgroundColor: 'white',
+                    borderWidth: 2,
+                    borderColor: '#fE9603',
+                    pointRadius: 3,
+                    pointHoverRadius: 3,
+                    pointHoverBorderWidth: 3,
+                    fill: true,
+                    // data: [30, 90, 50, 120, 100, 170]
+                    data: chartData
+                }]
+            };
+
+
+            var options = {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            color: 'rgba(200, 200, 200, 0.05)',
+                            lineWidth: 1,
+                            display: false
+                        }
+                    }],
+                    yAxes: [{
+                        display: false,
+                        scaleLabel: {
+                            display: false,
+                            labelString: 'Value'
+                        }
+                    }]
+                },
+                elements: {
+                    line: {
+                        tension: 0.4
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                point: {
+                    backgroundColor: 'white',
+                    display: false
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                    titleFontFamily: 'Poppins',
+                    backgroundColor: 'rgba(0,0,0,0.7)',
+                    titleFontColor: '#FFF',
+                    caretSize: 5,
+                    cornerRadius: 2,
+                    xPadding: 10,
+                    yPadding: 10
+                }
+            };
+
+
+            var chartInstance = new Chart(chart, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+
+        }
+
+    </script>
+
+
+
+
+
+}
+
+
+

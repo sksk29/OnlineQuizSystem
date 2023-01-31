@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineQuizSystem", "OnlineQuizSystem\OnlineQuizSystem.csproj", "{CE01C13F-EEAA-45EE-81F6-7248DC6635F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{80C628A8-E9E2-45D0-A68F-CF6ADD352CBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE01C13F-EEAA-45EE-81F6-7248DC6635F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE01C13F-EEAA-45EE-81F6-7248DC6635F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE01C13F-EEAA-45EE-81F6-7248DC6635F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE01C13F-EEAA-45EE-81F6-7248DC6635F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C628A8-E9E2-45D0-A68F-CF6ADD352CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C628A8-E9E2-45D0-A68F-CF6ADD352CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C628A8-E9E2-45D0-A68F-CF6ADD352CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C628A8-E9E2-45D0-A68F-CF6ADD352CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EA76C10-543A-4266-86C4-BFB803445EA2}
+	EndGlobalSection
+EndGlobal

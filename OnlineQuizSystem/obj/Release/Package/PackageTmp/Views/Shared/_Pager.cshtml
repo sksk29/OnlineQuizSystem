@@ -1,0 +1,60 @@
+﻿
+@using OnlineQuizSystem.CommonCode
+@model PagerHelper
+
+
+<div @((Model.TotalPages == 1) ? "style=display:none;" : "")>
+
+    <ul class="pagination pagination-circle pagination-3d pagination-light">
+
+        @{
+            if (Model.ShowFirstPrevLinks)
+            {
+
+
+                <!--first page code-->
+                <li class="page-item"> @Html.Raw(Html.PagerPageLink(1, Url.RequestContext, "<i class='icon-line-chevrons-left'></i>", Model))</li>
+
+                <!--Previous page code-->
+                <li class="page-item">  @Html.Raw(Html.PagerPageLink(Model.StartPageNumber - 1, Url.RequestContext, "<i class='icon-line-chevron-left'></i>", Model))</li>
+
+
+            }
+        }
+
+        @{
+            for (int linkForPgCounter = Model.StartPageNumber; linkForPgCounter <= Model.EndPageNumber; linkForPgCounter++)
+            {
+                if (linkForPgCounter == Model.CurrentPage)
+                {
+
+                    <li class="page-item active"><a class="page-link" href="#!">@linkForPgCounter</a></li>
+                }
+                else
+                {
+                    <li class="page-item"> @Html.Raw(Html.PagerPageLink(linkForPgCounter, Url.RequestContext, Model))</li>
+                }
+            }
+        }
+
+
+
+
+        @{ if (Model.ShowNextLastLinks)
+            {
+
+
+                <!--next page code-->
+                <li class="page-item">  @Html.Raw(Html.PagerPageLink(Model.EndPageNumber + 1, Url.RequestContext, "<i class='icon-line-chevron-right'></i>", Model))</li>
+
+                <!--last page code-->
+                <li class="page-item">  @Html.Raw(Html.PagerPageLink(Model.TotalPages, Url.RequestContext, "<i class='icon-line-chevrons-right'></i>", Model))</li>
+
+            }
+        }
+
+    </ul>
+
+</div>
+
+
